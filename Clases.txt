@@ -1,0 +1,5 @@
+Primero descargar e instslamos el Gwin32 son los comando de flex, y mqw es el que tiene el compilados gcc
+
+luego se creo un archivo primero.l  y  luego verificamos con  el comando flex y si esta bine se genera un archivo c de lex.yy.c y luego con el comando 
+gcc -o ejer1 lex.yy.c -lfl   este genera  el exe
+
