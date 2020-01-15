@@ -1,0 +1,80 @@
+Realizar un léxico que permita ingresar un numero entero positivo e imprima si es o no un numero palíndromo. 
+También se debe imprimir la longitud de la cadena y el total de números palindromos ingresados.
+
+NOTA: Un número palíndromo es aquel que se lee de igual manera al revés. Ej: 121, 2332, 44, 98789.
+
+
+
+#include<iostream>
+
+using namespace std;
+
+int main(){
+    int i=0,j=0;
+    string palabra=" ";
+    cout<<"ingrese palabra "<<endl;
+    cin >> palabra;
+    for(i=0;i<palabra.length();i++)
+{
+        for(j=palabra.length()-1;j>=0;j--)
+	{
+            if(palabra[i]==palabra[j])
+	{
+                cout<<"es palindroma "<<endl;
+            }
+            else
+		{
+                cout<<"no lo es "<<endl;
+         	}
+        }
+    }
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numero,p,s,t,c,m;
+cout<<"ingrese un numero ";
+cin>>numero;
+p=numero%10;
+s=p/10;
+c=s/10;
+m=p*100+t*10+c;
+if (m=numero)
+{
+cout<<"El Numero es Palindromo\n";
+}
+else
+{
+cout<<"El Numero no es Palindromo\n";
+}
+ return 0;
+}
+
+
+
+%%
+[0-9]+ 
+{
+ECHO;
+int numero,p,s,t,c,m;
+numero=atoi(yytext);
+p=numero%10;
+s=p/10;
+c=s/10;
+m=p*100+t*10+c;
+if (m=numero){printf("\n Es palindromo \n");}
+else{printf("\n no es palindromo \n");}
+}
+[^ \n\t]* {
+ECHO; printf("No aceptado\n");
+}
+%%
+main()
+{
+yylex();
+}
